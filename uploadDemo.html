@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="progress.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="uploader" class="webuploader"></div>
+    <input type="hidden" id="uploadhidden" />
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="webuploader-0.1.5.js"></script>
+    <script type="text/javascript" src="jquery.powerUploader.js"></script>
+    <script type="text/javascript">
+        (function() {
+            $("#uploader").powerUploader({
+                hiddenInputId: "uploadhidden", //设置一个隐藏框装载files
+                formData: {}, //上传的参数
+                //fileTypeExts: 'gif,jpg',		//限制文件上传的类型
+                //fileMimeTypes: 'image/*',		//精确筛选文件
+                onAllComplete: function(event) { //所有文件上传完后事件
+
+                },
+                onComplete: function(event) { //单个文件上传完后事件
+
+                },
+                onProgress: function(event) { //文件上传过程
+                    console.log(event)
+                }
+            });
+        })()
+    </script>
+</body>
+
+</html>
